@@ -14,7 +14,7 @@ export default function ProjectsSection() {
           {PROJECTS.map((p, i) => (
             <div
               key={p.id}
-              className="grid md:grid-cols-2 rounded-2xl overflow-hidden bg-white shadow-sm"
+              className="grid md:grid-cols-2 rounded-2xl overflow-hidden bg-white shadow-sm min-h-[350px] aspect-video"
             >
               {/* IMAGE */}
               <div

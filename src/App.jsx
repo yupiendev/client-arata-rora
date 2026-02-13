@@ -12,7 +12,6 @@ export default function App() {
     <>
       <Navbar />
       <HeroSection />
-      <AboutSection />
       <ProjectsSection />
       <ContactSection />
       <Footer />
