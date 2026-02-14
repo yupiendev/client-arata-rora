@@ -12,7 +12,8 @@ export default function Navbar() {
       )}
     >
       <nav className="max-w-6xl mx-auto flex justify-between py-6 px-6">
-        <h1 className="font-semibold">Madelyn Torff</h1>
+        <h1 className={("font-semibold", isTop ? "bg-transparent text-black" : " text-black"
+      )}>Madelyn Torff</h1>
 
         <ul className="flex gap-8 text-sm">
           <li><a href="#about">About</a></li>
