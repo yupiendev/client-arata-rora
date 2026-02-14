@@ -3,7 +3,7 @@ import { HiOutlineMail } from "react-icons/hi";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gray-200 pt-16">
+    <footer className="relative bg-white pt-16">
 
       {/* ICON AREA */}
       <div className="text-center z-10 relative">
@@ -21,7 +21,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="text-xs text-gray-500">Madelyn Torff 2021</p>
+        <p className="text-xs text-gray-500 mb-10">Madelyn Torff 2021</p>
+        <a
+            href="#home"
+            className="hover:text-black transition-colors"
+          >
+            Back to Top
+          </a>
       </div>
 
       {/* WAVE KUNING (DI BAWAH ICON) */}

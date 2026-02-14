@@ -4,7 +4,7 @@ import Profile from "../../assets/Images/profile.png"
 
 export default function HeroSection() {
   return (
-    <section className="relative grid grid-cols-2 min-h-screen flex items-center bg-gray-200 overflow-hidden">
+    <section id="home" className="relative grid grid-cols-2 min-h-screen flex items-center bg-white overflow-hidden">
 
      
 
@@ -27,7 +27,7 @@ export default function HeroSection() {
 
           <div className="flex gap-4">
             <Button>Projects</Button>
-            <Button variant="outline">LinkedIn</Button>
+            <Button variant="outline"className="hover:bg-black hover:text-white">LinkedIn</Button>
           </div>
         </div>
 
