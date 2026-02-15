@@ -16,7 +16,7 @@ export default function Navbar() {
       )}>Madelyn Torff</h1>
 
         <ul className="flex gap-8 text-sm">
-          <li><a href="#about">About</a></li>
+          <li><a href="/about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contacts</a></li>
         </ul>
