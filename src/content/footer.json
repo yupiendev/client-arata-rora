@@ -1,0 +1,13 @@
+{
+  "owner": "Taylor Swift",
+  "year": "2021",
+  "backToTop": {
+    "label": "Back to Top",
+    "href": "#home"
+  },
+  "socials": [
+    { "id": "instagram", "href": "#" },
+    { "id": "linkedin", "href": "#" },
+    { "id": "email", "href": "mailto:example@email.com" }
+  ]
+}

@@ -6,7 +6,7 @@ import Footer from "../../components/layout/Footer";
 
 import HeroSection from "../../components/sections/HeroSection";
 import ProjectsSection from "../../components/sections/ProjectsSection";
-import ContactSection from "../../components/sections/ContactSection";
+import ExperienceSection from "../../components/sections/ExperienceSection";
 import '../../index.css';
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
       <Navbar />
       <HeroSection />
       <ProjectsSection />
-      <ContactSection />
+      <ExperienceSection />
       <Footer />
     </>
   );

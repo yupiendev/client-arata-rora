@@ -1,0 +1,10 @@
+{
+  "label": "About",
+  "title": "About Me",
+  "description": "Nisl arcu, scelerisque neque ut. Tincidunt amet, tempor duis tortor. Praesent vitae facilisis neque. Nulla facilisi.",
+  "profileImage": "/src/assets/images/profile.jpg",
+  "cta": {
+    "label": "Resume",
+    "href": "#"
+  }
+}
