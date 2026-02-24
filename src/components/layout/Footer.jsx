@@ -1,18 +1,17 @@
-import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
+import { FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
 import content from "../../content/footer.json";
 
 const iconMap = {
   instagram: FaInstagram,
-  linkedin: FaLinkedinIn,
-  email: HiOutlineMail
+  youtube: FaYoutube,
+  tiktok: FaTiktok
 };
 
 export default function Footer() {
   const { owner, year, backToTop, socials } = content;
 
   return (
-    <footer className="relative bg-white pt-16">
+    <footer className="relative bg-[#f7f5fa] pt-16">
 
       {/* ICON AREA */}
       <div className="relative z-10 text-center px-4">
@@ -25,9 +24,9 @@ export default function Footer() {
               <a
                 key={social.id}
                 href={social.href}
-                className="w-9 h-9 flex items-center justify-center bg-gray-800 text-white rounded-sm"
+                className="w-9 h-9 flex items-center justify-center bg-[#f5fefd] text-black rounded-sm shadow-xl"
               >
-                <Icon size={social.id === "email" ? 18 : 16} />
+                <Icon size=  {24} />
               </a>
             );
           })}
@@ -53,7 +52,7 @@ export default function Footer() {
           preserveAspectRatio="none"
         >
           <path
-            fill="#fbbf24"
+            fill="#9966cc"
             d="
               M0,140
               C180,60 360,220 600,160

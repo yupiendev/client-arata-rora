@@ -7,13 +7,13 @@ import content from "../../content/project.json";
  * Change layout, color, or spacing here.
  */
 const styles = {
-  section: "py-24 bg-white",
+  section: "py-24 bg-[#f7f5fa]",
   container: "max-w-4xl",
   title: "text-3xl font-serif text-center mb-16",
   list: "space-y-12",
 
   card:
-    "grid md:grid-cols-2 rounded-2xl overflow-hidden bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300 min-h-[350px]",
+    "grid md:grid-cols-2 rounded-2xl overflow-hidden bg-[#f5fefd] shadow-xl hover:shadow-2xl transition-shadow duration-300 min-h-[350px]",
 
   media:
     "h-[260px] md:h-full",

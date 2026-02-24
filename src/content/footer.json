@@ -6,8 +6,8 @@
     "href": "#home"
   },
   "socials": [
-    { "id": "instagram", "href": "#" },
-    { "id": "linkedin", "href": "#" },
-    { "id": "email", "href": "mailto:example@email.com" }
+    { "id": "instagram", "href": "https://www.instagram.com/aratarora/" },
+    { "id": "youtube", "href": "https://www.youtube.com/@ArataRora" },
+    { "id": "tiktok", "href": "https://www.tiktok.com/@aratarora" }
   ]
 }

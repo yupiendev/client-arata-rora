@@ -15,7 +15,7 @@ export default function Navbar() {
         "fixed w-full z-50 transition-all duration-300",
         isTop
           ? "hidden md:block bg-transparent text-black"
-          : "block bg-white/90 backdrop-blur-md shadow text-black"
+          : "block bg-[#f5fefd]/90 backdrop-blur-md shadow text-black"
       )}
     >
       <nav className="max-w-6xl mx-auto flex justify-between items-center py-6 px-6">
@@ -34,7 +34,7 @@ export default function Navbar() {
             <li key={link.id}>
               <a
                 href={link.href}
-                className="hover:opacity-70 transition-opacity"
+                className="font-medium hover:opacity-70 transition-opacity"
               >
                 {link.label}
               </a>
@@ -62,7 +62,7 @@ export default function Navbar() {
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <ul className="flex flex-col items-center gap-6 py-6 bg-white text-black shadow">
+        <ul className="flex flex-col items-center gap-6 py-6 bg-[#f5fefd] text-black shadow">
           {links.map((link) => (
             <li key={link.id}>
               <a

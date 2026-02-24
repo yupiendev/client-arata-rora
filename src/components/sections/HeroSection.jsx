@@ -8,7 +8,7 @@ import content from "../../content/hero.json";
  */
 const styles = {
   section:
-    "relative grid grid-cols-2 min-h-screen bg-white overflow-hidden items-center",
+    "relative grid grid-cols-2 min-h-screen bg-[#f7f5fa] overflow-hidden items-center",
   container:
     "relative z-10 col-span-1 pl-20",
   role:
@@ -31,7 +31,7 @@ export default function HeroSection() {
       id="home"
       className={styles.section}
       style={{
-        "--hero-accent": "#EAB308", // yellow-500
+        "--hero-accent": "#9966cc", // yellow-500
         "--hero-muted": "#6B7280"   // gray-500
       }}
     >
@@ -40,11 +40,12 @@ export default function HeroSection() {
           <p className={styles.role}>
             {content.role}
           </p>
-
-          <h1 className={styles.headline}>
-            {content.headline}
+          {content.headline.map((h) => (
+            <h1 className={styles.headline}>
+            {h}
           </h1>
-
+          ))}
+          
           <p className={styles.description}>
             {content.description}
           </p>

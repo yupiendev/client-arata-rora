@@ -6,7 +6,7 @@ import content from "../../content/experience.json";
  * Adjust spacing or color centrally.
  */
 const styles = {
-  section: "py-24 bg-white",
+  section: "py-24 bg-[#f7f5fa]",
   container: "max-w-3xl",
   title: "text-3xl font-serif text-center mb-16",
 
@@ -30,7 +30,7 @@ export default function ExperienceSection() {
 
   return (
     <section
-      id="experience"
+      id="collab"
       className={styles.section}
       style={{
         "--exp-border": "#E5E7EB", // gray-200
