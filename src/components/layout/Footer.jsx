@@ -11,7 +11,7 @@ export default function Footer() {
   const { owner, year, backToTop, socials } = content;
 
   return (
-    <footer className="relative bg-[#f7f5fa] pt-16">
+    <footer id="footer" className="relative bg-[#f7f5fa] pt-16">
 
       {/* ICON AREA */}
       <div className="relative z-10 text-center px-4">

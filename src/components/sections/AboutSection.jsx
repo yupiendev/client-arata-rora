@@ -17,7 +17,7 @@ const styles = {
     "text-[var(--about-muted)] mb-8 leading-relaxed",
 
   button:
-    "bg-[var(--about-accent)] px-6 py-2.5 rounded-md transition-transform duration-200 hover:scale-105",
+    "bg-[var(--about-accent)] px-6 py-2.5 rounded-md transition-transform duration-200 hover:scale-105 text-white",
 
   visualWrapper:
     "relative flex justify-center md:justify-end",
@@ -55,9 +55,6 @@ export default function AboutSection() {
 
           <p className={styles.description}>{description}</p>
 
-          <a href={cta.href} className={styles.button}>
-            {cta.label}
-          </a>
         </div>
 
         {/* RIGHT - PROFILE IMAGE */}

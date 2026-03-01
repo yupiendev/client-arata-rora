@@ -5,6 +5,6 @@
     { "id": "about", "label": "About", "href": "/about" },
     { "id": "projects", "label": "Projects", "href": "/#projects" },
     { "id": "Collab", "label": "Collab", "href": "/#collab" },
-    { "id": "contact", "label": "Contacts", "href": "/#contact" }
+    { "id": "contact", "label": "Contacts", "href": "/#footer" }
   ]
 }

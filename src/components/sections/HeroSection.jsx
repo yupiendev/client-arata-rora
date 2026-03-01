@@ -2,6 +2,7 @@ import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Profile from "../../assets/Images/profile.png";
 import content from "../../content/hero.json";
+import { FaHandsHoldingCircle } from "react-icons/fa6";
 
 /**
  * Centralized styling for maintainability.
@@ -51,19 +52,19 @@ export default function HeroSection() {
           </p>
 
           <div className={styles.buttonGroup}>
-            {content.actions.map((action) => (
+          
               <Button
-                key={action.label}
-                variant={action.variant === "outline" ? "outline" : undefined}
+                key={content.action.label}
+                variant={content.action.variant === "outline" ? "outline" : undefined}
                 className={
-                  action.variant === "outline"
+                  content.action.variant === "outline"
                     ? "hover:bg-black hover:text-white"
                     : undefined
                 }
               >
-                {action.label}
+                {content.action.label}
               </Button>
-            ))}
+            <a href=""><FaHandsHoldingCircle className="size-10 bg-white shadow-lg p-1 rounded-md text-[#9966cc] "></FaHandsHoldingCircle></a>
           </div>
         </div>
       </Container>
