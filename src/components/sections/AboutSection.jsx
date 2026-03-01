@@ -40,8 +40,8 @@ export default function AboutSection() {
       id="about"
       className={styles.section}
       style={{
-        "--about-bg": "#F3F4F6",     // gray-100
-        "--about-accent": "#FACC15", // yellow-400
+        "--about-bg": "#f7f5fa",     // gray-100
+        "--about-accent": "#9966cc", // yellow-400
         "--about-muted": "#6B7280"   // gray-500
       }}
     >
