@@ -1,10 +1,7 @@
+import { motion } from "framer-motion";
 import Container from "../ui/Container";
 import content from "../../content/experience.json";
 
-/**
- * Clean, minimal styling system.
- * Adjust spacing or color centrally.
- */
 const styles = {
   section: "py-24 bg-[#f7f5fa]",
   container: "max-w-3xl",
@@ -25,27 +22,82 @@ const styles = {
   description: "mt-4 text-[var(--exp-body)] leading-relaxed"
 };
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
 export default function ExperienceSection() {
   const { sectionTitle, items } = content;
 
   return (
-    <section
+    <motion.section
       id="collab"
       className={styles.section}
       style={{
-        "--exp-border": "#E5E7EB", // gray-200
-        "--exp-muted": "#6B7280",  // gray-500
-        "--exp-body": "#374151"    // gray-700
+        "--exp-border": "#E5E7EB",
+        "--exp-muted": "#6B7280",
+        "--exp-body": "#374151"
       }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
       <Container className={styles.container}>
-        <h2 className={styles.title}>
+        <motion.h2
+          className={styles.title}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           {sectionTitle}
-        </h2>
+        </motion.h2>
 
-        <div className={styles.list}>
-          {items.map((exp) => (
-            <article key={exp.id} className={styles.item}>
+        <motion.div
+          className={styles.list}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {items.map((exp, index) => (
+            <motion.article
+              key={exp.id}
+              className={styles.item}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  x: index % 2 === 0 ? -30 : 30
+                },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    duration: 0.6,
+                    ease: "easeOut"
+                  }
+                }
+              }}
+              whileHover={{
+                y: -4,
+                transition: { duration: 0.2 }
+              }}
+            >
               <div className={styles.header}>
                 <h3 className={styles.role}>
                   {exp.role}
@@ -63,10 +115,10 @@ export default function ExperienceSection() {
               <p className={styles.description}>
                 {exp.description}
               </p>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </Container>
-    </section>
+    </motion.section>
   );
 }

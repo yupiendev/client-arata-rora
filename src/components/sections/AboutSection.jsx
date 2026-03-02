@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import content from "../../content/about.json";
 
 const styles = {
@@ -16,9 +17,6 @@ const styles = {
   description:
     "text-[var(--about-muted)] mb-8 leading-relaxed",
 
-  button:
-    "bg-[var(--about-accent)] px-6 py-2.5 rounded-md transition-transform duration-200 hover:scale-105 text-white",
-
   visualWrapper:
     "relative flex justify-center md:justify-end",
 
@@ -32,45 +30,110 @@ const styles = {
     "w-full h-full object-cover"
 };
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
 export default function AboutSection() {
-  const { label, title, description, profileImage, cta } = content;
+  const { label, title, description, profileImage } = content;
 
   return (
-    <section
+    <motion.section
       id="about"
       className={styles.section}
       style={{
-        "--about-bg": "#f7f5fa",     // gray-100
-        "--about-accent": "#9966cc", // yellow-400
-        "--about-muted": "#6B7280"   // gray-500
+        "--about-bg": "#f7f5fa",
+        "--about-accent": "#9966cc",
+        "--about-muted": "#6B7280"
       }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
     >
       <div className={styles.wrapper}>
 
         {/* LEFT */}
-        <div className={styles.textContainer}>
-          <p className={styles.label}>{label}</p>
+        <motion.div
+          className={styles.textContainer}
+          variants={containerVariants}
+        >
+          <motion.p
+            className={styles.label}
+            variants={fadeUp}
+          >
+            {label}
+          </motion.p>
 
-          <h2 className={styles.title}>{title}</h2>
+          <motion.h2
+            className={styles.title}
+            variants={fadeUp}
+          >
+            {title}
+          </motion.h2>
 
-          <p className={styles.description}>{description}</p>
+          <motion.p
+            className={styles.description}
+            variants={fadeUp}
+          >
+            {description}
+          </motion.p>
+        </motion.div>
 
-        </div>
+        {/* RIGHT */}
+        <motion.div
+          className={styles.visualWrapper}
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          {/* Floating background */}
+          <motion.div
+            className={styles.circleBackground}
+            animate={{ y: [0, -10, 0] }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
 
-        {/* RIGHT - PROFILE IMAGE */}
-        <div className={styles.visualWrapper}>
-          <div className={styles.circleBackground} />
-
-          <div className={styles.circleImageWrapper}>
+          {/* Image scale-in */}
+          <motion.div
+            className={styles.circleImageWrapper}
+            initial={{ scale: 0.85, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 120,
+              damping: 15
+            }}
+            viewport={{ once: true }}
+          >
             <img
               src={profileImage}
               alt="Profile"
               className={styles.image}
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -1,16 +1,31 @@
+import { motion } from "framer-motion";
 import { cn } from "../../utils/cn";
 
-export default function Button({ children, variant = "primary", className }) {
+export default function Button({
+  children,
+  variant = "primary",
+  className,
+  disabled = false,
+  ...props
+}) {
   return (
-    <button
+    <motion.button
+      whileHover={!disabled ? { y: -3 } : undefined}
+      whileTap={!disabled ? { scale: 0.96 } : undefined}
+      transition={{ type: "spring", stiffness: 300, damping: 18 }}
+      disabled={disabled}
       className={cn(
-        "px-5 py-2 rounded-md transition-all duration-300",
-        variant === "primary" && "bg-[#9966cc] text-white hover:scale-105",
-        variant === "outline" && "border border-gray-400 hover:bg-gray-100",
+        "px-5 py-2 rounded-md transition-colors duration-300 focus:outline-none",
+        "disabled:opacity-50 disabled:cursor-not-allowed",
+        variant === "primary" &&
+          "bg-[#9966cc] text-white hover:bg-[#8855bb]",
+        variant === "outline" &&
+          "border border-gray-400 hover:bg-gray-100",
         className
       )}
+      {...props}
     >
       {children}
-    </button>
+    </motion.button>
   );
 }
