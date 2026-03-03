@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useScrollDirection } from "../../hooks/useScrollDirection";
@@ -6,8 +7,15 @@ import content from "../../content/navbar.json";
 export default function Navbar() {
   const isTop = useScrollDirection();
   const [isOpen, setIsOpen] = useState(false);
-
+  const location = useLocation();
   const { brand, links } = content;
+ const filteredLinks =
+  location.pathname.startsWith("/about")
+    ? links.filter(
+        (link) =>
+          !["projects", "collab"].includes(link.label.toLowerCase())
+      )
+    : links;
 
   return (
     <motion.header
@@ -19,7 +27,7 @@ export default function Navbar() {
           : "0px 4px 20px rgba(0,0,0,0.05)"
       }}
       transition={{ duration: 0.3 }}
-      className="fixed w-full z-50 backdrop-blur-md"
+      className={`fixed w-full z-50 backdrop-blur-md transition-all ${isTop ? "opacity-0 md:opacity-100" : ""}`}
     >
       <nav className="max-w-6xl mx-auto flex justify-between items-center py-6 px-6">
 
@@ -34,7 +42,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-sm">
-          {links.map((link) => (
+          {filteredLinks.map((link) => (
             <motion.li
               key={link.id}
               whileHover={{ y: -2 }}
@@ -95,7 +103,7 @@ export default function Navbar() {
               }}
               className="flex flex-col items-center gap-6 py-6 text-black shadow"
             >
-              {links.map((link) => (
+              {filteredLinks.map((link) => (
                 <motion.li
                   key={link.id}
                   variants={{

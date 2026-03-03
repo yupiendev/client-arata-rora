@@ -10,13 +10,13 @@ const styles = {
   list: "space-y-12",
 
   card:
-    "grid md:grid-cols-2 rounded-2xl overflow-hidden bg-[#f5fefd] shadow-xl min-h-[350px]",
+    "grid md:grid-cols-2 rounded-2xl overflow-hidden bg-[#f5fefd] shadow-xl min-h-[350px] md:max-h-[350px]",
 
   media:
     "h-[260px] md:h-full overflow-hidden",
 
   image:
-    "w-full h-full object-cover",
+    "w-full h-full object-cover md:max-h-[350px]",
 
   content:
     "flex flex-col justify-center items-center p-10 text-center h-full space-y-4",
@@ -138,11 +138,13 @@ export default function ProjectsSection() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Button
-                      variant="outline"
-                      className="hover:bg-black hover:text-gray-400"
-                    >
+                    asChild
+                    variant="outline"
+                  >
+                    <a href={project.link} target="_blank">
                       View Project
-                    </Button>
+                    </a>
+                  </Button>
                   </motion.div>
                 </div>
               </motion.article>

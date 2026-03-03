@@ -4,14 +4,15 @@ import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
 import AboutSection from "../../components/sections/AboutSection"
 import "../../index.css"
+import { BrowserRouter } from "react-router-dom";
 
 export default function App() {
-  return (
+  return (<BrowserRouter>
     <div className="min-h-screen grid grid-rows-[1fr_auto]">
       <Navbar />
       <AboutSection />
       <Footer />
-    </div>
+    </div></BrowserRouter>
   );
 }
 

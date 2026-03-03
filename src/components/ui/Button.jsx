@@ -20,7 +20,7 @@ export default function Button({
         variant === "primary" &&
           "bg-[#9966cc] text-white hover:bg-[#8855bb]",
         variant === "outline" &&
-          "border border-gray-400 hover:bg-gray-100",
+          "border border-[#8855bb] hover:bg-[#9966cc] hover:text-white",
         className
       )}
       {...props}

@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import Container from "../ui/Container";
 import content from "../../content/collaboration.json";
+import Button from "../ui/Button";
+import { FaExternalLinkAlt } from "react-icons/fa";
+
 
 const styles = {
   section: "py-24 bg-[#f7f5fa]",
@@ -9,11 +12,11 @@ const styles = {
 
   list: "space-y-12",
 
-  item: "border-b border-[var(--exp-border)] pb-8",
+  item: "border-b border-[var(--exp-border)] pb-8 group hover:cursor-pointer",
 
   header: "flex justify-between items-baseline flex-wrap gap-2",
 
-  role: "text-xl font-serif",
+  role: "text-xl font-serif group-hover:underline",
 
   company: "text-[var(--exp-muted)]",
 
@@ -59,14 +62,14 @@ export default function CollaborationSection() {
     >
       <Container className={styles.container}>
         <motion.h2
-          className={styles.title}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          {sectionTitle}
-        </motion.h2>
+        className={styles.title} 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        {sectionTitle}
+      </motion.h2>
 
         <motion.div
           className={styles.list}
@@ -79,6 +82,9 @@ export default function CollaborationSection() {
             <motion.article
               key={exp.id}
               className={styles.item}
+              onClick={() => {
+                window.open(exp.link, "_blank")
+              }}
               variants={{
                 hidden: {
                   opacity: 0,
@@ -99,8 +105,9 @@ export default function CollaborationSection() {
               }}
             >
               <div className={styles.header}>
-                <h3 className={styles.role}>
+                <h3 className={`${styles.role} inline-flex items-center gap-2`}>
                   {exp.title}
+                  <FaExternalLinkAlt className="text-sm opacity-70" />
                 </h3>
 
                 <span className={styles.period}>
@@ -122,3 +129,4 @@ export default function CollaborationSection() {
     </motion.section>
   );
 }
+

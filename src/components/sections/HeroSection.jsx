@@ -7,21 +7,28 @@ import { FaHandsHoldingCircle } from "react-icons/fa6";
 
 const styles = {
   section:
-    "relative grid grid-cols-2 min-h-screen bg-[#f7f5fa] overflow-hidden items-center",
+    "relative grid grid-cols-1 md:grid-cols-2 min-h-screen bg-[#f7f5fa] overflow-hidden",
+
   container:
-    "relative z-10 col-span-1 pl-20",
+    "relative z-20 px-6 md:pl-20 flex items-center",
+
   role:
-    "text-[var(--hero-accent)] font-semibold mb-4 tracking-wide",
+    "text-white md:text-[var(--hero-accent)] font-semibold mb-4 tracking-wide",
+
   headline:
-    "text-5xl md:text-6xl font-serif leading-tight mb-6",
+    "text-4xl md:text-6xl font-serif leading-tight mb-6 text-white md:text-black",
+
   description:
-    "text-[var(--hero-muted)] mb-8 max-w-md",
+    "text-gray-200 md:text-[var(--hero-muted)] mb-8 max-w-md",
+
   buttonGroup:
     "flex gap-4",
+
   imageWrapper:
-    "overflow-hidden pointer-events-none",
+    "absolute inset-0 z-0 md:relative md:inset-auto md:z-10 flex justify-center items-center",
+
   image:
-    "absolute top-0 right-0 z-10 w-[60vw] md:w-[45vw] aspect-square"
+    "absolute right-0 top-0 w-full h-full md:h-auto md:w-[45vw] object-cover md:object-contain"
 };
 
 const containerVariants = {
@@ -88,6 +95,7 @@ export default function HeroSection() {
           >
             <motion.div whileHover={{ y: -3 }} whileTap={{ scale: 0.97 }}>
               <Button
+                asChild
                 variant={
                   content.action.variant === "outline"
                     ? "outline"
@@ -99,12 +107,14 @@ export default function HeroSection() {
                     : undefined
                 }
               >
-                {content.action.label}
+                <a href="#projects">
+                  {content.action.label}
+                </a>
               </Button>
             </motion.div>
 
             <motion.a
-              href=""
+              href="https://trakteer.id/aratarora" target="_blank"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -136,6 +146,21 @@ export default function HeroSection() {
             ease: "easeInOut"
           }}
         />
+         {/* MASKED OVERLAY (INLINE STYLE) */}
+  <div
+    className="absolute inset-0 md:hidden"
+    style={{
+      background: "rgba(0,0,0,0.65)",
+      WebkitMaskImage: `url(${Profile})`,
+      maskImage: `url(${Profile})`,
+      WebkitMaskSize: "cover",
+      maskSize: "cover",
+      WebkitMaskRepeat: "no-repeat",
+      maskRepeat: "no-repeat",
+      WebkitMaskPosition: "center",
+      maskPosition: "center"
+    }}
+  />
       </motion.div>
     </motion.section>
   );
