@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
-import Profile from "../../assets/Images/profile.webp";
+import Profile from "/assets/Images/profile.webp";
 import content from "../../content/hero.json";
 import { FaHandsHoldingCircle } from "react-icons/fa6";
 
