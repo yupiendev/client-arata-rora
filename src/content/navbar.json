@@ -2,7 +2,7 @@
   "brand": "Arata Rora",
   "links": [
     { "id": "home", "label": "Home", "href": "/" },
-    { "id": "about", "label": "About", "href": "/about" },
+    { "id": "about", "label": "About", "href": "/about.html" },
     { "id": "projects", "label": "Projects", "href": "#projects" },
     { "id": "Collab", "label": "Collab", "href": "#collab" },
     { "id": "contact", "label": "Contacts", "href": "#footer" }
