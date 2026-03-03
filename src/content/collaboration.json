@@ -1,0 +1,21 @@
+{
+  "sectionTitle": "Collaborations",
+  "items": [
+    {
+      "id": "col-1",
+      "title": "Magnet (Cover)",
+      "company": "Kon",
+      "period": "2025",
+      "description": "A duet cover of 'Magnet' performed by Arata Rora and Kon, highlighting contrasting vocal tones and emotional delivery. The collaboration focused on harmonization, vocal layering, and expressive storytelling to capture the song’s intimate dynamic.",
+      "link": "https://youtu.be/nVdKw5LKy0o?si=jpipCAGY3YBoDl1V"
+    },
+    {
+      "id": "col-2",
+      "title": "Cendrilion (SignalP Cover)",
+      "company": "Kouki",
+      "period": "2025",
+      "description": "A collaborative cover of 'Cendrilion' featuring Kouki, blending character-driven vocals with balanced mixing and thematic performance. The project emphasized role-based vocal interpretation and dynamic interaction between both singers.",
+      "link": "https://vt.tiktok.com/ZSmQ7jq63/"
+    }
+  ]
+}

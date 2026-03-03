@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Container from "../ui/Container";
-import content from "../../content/experience.json";
+import content from "../../content/collaboration.json";
 
 const styles = {
   section: "py-24 bg-[#f7f5fa]",
@@ -40,7 +40,7 @@ const fadeUp = {
   }
 };
 
-export default function ExperienceSection() {
+export default function CollaborationSection() {
   const { sectionTitle, items } = content;
 
   return (
@@ -100,7 +100,7 @@ export default function ExperienceSection() {
             >
               <div className={styles.header}>
                 <h3 className={styles.role}>
-                  {exp.role}
+                  {exp.title}
                 </h3>
 
                 <span className={styles.period}>

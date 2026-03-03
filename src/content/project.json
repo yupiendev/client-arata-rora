@@ -3,14 +3,20 @@
   "items": [
     {
       "id": "project-1",
-      "title": "Project Name 1",
-      "description": "Short description about this project and what problem it solves.",
+      "title": "【COVER】ECHO - Arata Rora ver.",
+      "description": "My own take on 'ECHO' with a darker vocal tone and layered harmonies. Focused on character expression, controlled dynamics, and detailed mixing to match the intensity of the song.",
       "image": "/src/assets/images/projectImg.jpg"
     },
     {
       "id": "project-2",
-      "title": "Project Name 2",
-      "description": "Short description about this project and what problem it solves.",
+      "title": "Aitou, Soshite Nichijou wa Tsuzuku - by Ukaroku-san",
+      "description": "A soft and emotional cover that leans into storytelling and subtle vocal textures. I tried to keep it intimate, like whispering feelings into a quiet room.",
+      "image": "/src/assets/images/projectImg.jpg"
+    },
+    {
+      "id": "project-3",
+      "title": "Pilu - Arata Rora ver.",
+      "description": "Another dedicated song for /cough/ a friend of mine. A heartfelt performance with warm mixing and gentle phrasing. Totally normal dedication. Probably.",
       "image": "/src/assets/images/projectImg.jpg"
     }
   ]
