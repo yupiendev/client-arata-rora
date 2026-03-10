@@ -116,7 +116,7 @@ export default function CollaborationSection() {
               </div>
 
               <p className={styles.company}>
-                {exp.company}
+                In collaboration with {exp.company}
               </p>
 
               <p className={styles.description}>
